@@ -1,0 +1,47 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = "mysql://zambla:12345@localhost:3306/squaimdb"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Movies {
+  id        Int @id @default(autoincrement())
+  movieid   Int @unique
+  title     String
+  overview  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  directors  String
+  genre String
+  tagline String
+  poster String
+  release String
+  note String
+  author User? @relation(fields: [authorId], references: [id])
+  authorId Int?
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+  password String
+  admin Boolean @default(false)
+  token Int ?
+  comment Comment[]
+  movies Movies[]
+}
+
+model Comment {
+  Id  Int @id @default(autoincrement())
+  author User? @relation(fields: [authorId], references:[id])
+  authorId Int
+  MoviesId Int
+  Content String
+}

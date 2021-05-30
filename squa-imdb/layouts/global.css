@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Stellar-Regular";
+    src: local("Stellar-Regular"),     url(~assets/Stellar-Regular.otf) format("truetype");}
+
+html {
+    font-family: "Stellar-Regular";
+}
+
+@font-face {
+    font-family: "Stellar-Bold";
+    src: local("Stellar-Bold"),     url(~assets/Stellar-Bold.otf) format("truetype");}
+
+html {
+    font-family: "Stellar-Bold";
+}
+
+@font-face {
+    font-family: "Stellar-Light";
+    src: local("Stellar-Light"),     url(~assets/Stellar-Light.otf) format("truetype");}
+
+html {
+    font-family: "Stellar-Light";
+}
